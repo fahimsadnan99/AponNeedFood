@@ -15,6 +15,7 @@ import UserDeshbord from "./Components/User/Dashbord"
 import AdminRouter from "./Components/PrivateRoute/AdminRoute"
 import AdminDashbord from './Components/Admin/Dashbord'
 import SingleProduct from "./Components/SinglePage"
+import Payment from "./Components/PaymentCard/Payment"
 
 
 
@@ -47,7 +48,9 @@ const App = () => {
         <Route exact path="/cart">
           <Cart></Cart>
         </Route>
-
+<Route exact path="/payment">
+          <Payment></Payment>
+        </Route>
          
 
         <Route exact path="/logout">
