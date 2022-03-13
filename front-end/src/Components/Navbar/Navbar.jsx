@@ -10,7 +10,7 @@ const Navbar = () => {
       <>
         <div className="NavbarWrapper">
           <div className="px-lg-4 px-md-2 px-sm-0  tex-center">
-            <nav className="navbar navbar-expand-lg navbar-light navWrap"> 
+            <nav className="navbar sticky-top navbar-expand-lg navbar-light navWrap"> 
             
 
                <Link className="navbar-brand d-flex" exact to="/">
@@ -156,4 +156,4 @@ const Navbar = () => {
     );
 }
 
-export default Navbar
+export defaul
