@@ -44,7 +44,7 @@ const About = () => {
                 src="./img/office.jpeg"
                 alt="aboutUs"
                 className="img-fluid"
-                style={{ height: "400px", width: "100%" }}
+                style={{ height: "400px", width: "100%", borderRadius : "15px" }}
               ></img>
             </div>
           </div>

@@ -22,19 +22,19 @@ const Footer = () => {
                 <div className="socialLink">
                   <a href="https://www.facebook.com/aponfoodltd/?ref=pages_you_manage">
                  
-                    <i class="fa fa-facebook-square" aria-hidden="true"></i>
+                    <i class="fa fa-facebook-square" id="facebook" aria-hidden="true"></i>
                   </a>
                   <a href="https://www.youtube.com/channel/UCdxfeW3BguBwR5uwFymmbWw">
                     
-                    <i class="fa fa-youtube-play" aria-hidden="true"></i>
+                    <i class="fa fa-youtube" id="apple" aria-hidden="true"></i>
                   </a>
                   <a href="https://linkedin.com">
                    
-                    <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+                    <i class="fa fa-linkedin-square" id="github" aria-hidden="true"></i>
                   </a>
                   <a href="https://twitter.com">
                    
-                    <i class="fa fa-twitter-square" aria-hidden="true"></i>
+                    <i class="fa fa-twitter" id="twitter" aria-hidden="true"></i>
                   </a>{" "}
                 </div>
               </div>
