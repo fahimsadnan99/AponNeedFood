@@ -7,9 +7,11 @@ import Footer from "../Footer/Footer"
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { successMsg } from "../../utils/message";
+import axios from "axios"
 
 const  PaymentForm =()=> {
     const dispatch = useDispatch()
+    const ItemList = useSelector((state) => state);
    const  history = useHistory()
     const [payment, setPayment] = useState({
         cvc: '',
@@ -19,6 +21,7 @@ const  PaymentForm =()=> {
         number: '',
     })
     
+    console.log(ItemList);
 
   const  handleInputFocus = (e) => {
         setPayment({
@@ -36,10 +39,18 @@ const  PaymentForm =()=> {
        
     }
 
+    const MsgSend = async (email) => {
+        await axios.post("http://localhost:3002/api/msg", { email: email })
+            .then(res => console.log(res))
+    }
+
    const  HandleSubmit = () => {
+
+       MsgSend(ItemList.email)
+
         successMsg(true, "Product Perchanges Successful")
         dispatch({ type: "REMOVE_ALL_ITEM" });
-       history.push("/")
+       history.push("/user/deshbord")
 
     };
 

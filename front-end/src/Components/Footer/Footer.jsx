@@ -34,7 +34,7 @@ const Footer = () => {
                   </a>
                   <a href="https://twitter.com">
                    
-                    <i class="fa fa-twitter" id="twitter" aria-hidden="true"></i>
+                    <i class="fa fa-instagram" id="twitter" aria-hidden="true"></i>
                   </a>{" "}
                 </div>
               </div>

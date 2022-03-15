@@ -156,4 +156,4 @@ const Navbar = () => {
     );
 }
 
-export defaul
+export default Navbar

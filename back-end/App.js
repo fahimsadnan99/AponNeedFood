@@ -9,6 +9,7 @@ const Profile = require("./routers/ProfileRouter");
 const Catagory = require("./routers/catagoryRouter")
 const Product = require("./routers/ProductRouter")
 const Cart = require("./routers/cartRouter")
+const Msg = require("./routers/MsgSend")
 
 const app = express();
 
@@ -23,6 +24,7 @@ app.use("/api/profile", Profile);
 app.use("/api/catagory", Catagory);
 app.use("/api/product", Product)
 app.use("/api/cart", Cart)
+app.use("/api/msg", Msg)
 
 
 

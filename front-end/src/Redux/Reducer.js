@@ -3,7 +3,9 @@ const myState = {
   item: [],
   transportSystem: "",
   transportFee: 0,
-  user: {}
+  user: {},
+  buyProduct: [],
+  email : ""
 };
 
 const ItemList = (state = myState, actions) => {
@@ -19,9 +21,9 @@ const ItemList = (state = myState, actions) => {
         };
       } else {
         ErrorMsg(true, "Item Already Added")
-         return {
-           ...state
-         }
+        return {
+          ...state
+        }
       }
 
       break
@@ -72,11 +74,18 @@ const ItemList = (state = myState, actions) => {
         user: actions.value
       };
     case "REMOVE_ALL_ITEM":
+      const tempItem = state.item
       return {
         ...state,
-        item: []
-      }
+        item: [],
+        buyProduct: [...tempItem, ...state.buyProduct]
 
+      }
+      case  "TEMP_MAIL" :
+        return {
+          ...state,
+          email : actions.value.email
+        } 
       break
     default:
       return state;

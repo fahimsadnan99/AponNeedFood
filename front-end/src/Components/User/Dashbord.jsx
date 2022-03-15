@@ -6,17 +6,22 @@ import Profile from "./Profile";
 import { GetProfileData } from "../../API/AllApi"
 import {NavLink} from "react-router-dom"
 import Footer from '../Footer/Footer'
+import { useSelector } from "react-redux";
 
 const Dashbord = () => {
   const [data, setData] = useState()
   const [PurchaseHistory,setPurchaseHistory] = useState(false)
   const { name, email, role } = userInfo();
+  const itemList = useSelector((state) => state);
 
   useEffect(() => {
   GetProfileData()
     .then(res => setData(res.data))
   .catch(err => console.log(err))
+
+    console.log(itemList);
 },[])
+
 
   return (
     <>
@@ -81,11 +86,33 @@ const Dashbord = () => {
             </ul>
           </div>
          {PurchaseHistory && (<div className="col-md-8 offset-md-2 mt-3">
-            <ul class="list-group">
-              <li class="list-group-item active">Purchase History</li>
-              <li class="list-group-item">History </li>
-            </ul>
-          </div>)}
+            {itemList?.buyProduct.length == 0 &&  (<h4 className="color-warning">No Item Found</h4>)}
+            <table class="table">
+              <thead class="thead-dark">
+                <tr>
+                  <th scope="col">No</th>
+                  <th scope="col">image</th>
+                  <th scope="col">Name</th>
+
+                </tr>
+              </thead>
+              <tbody>
+                {  itemList?.buyProduct.map((product,index) => {
+              return (
+                  <tr>
+                    <th scope="row">{index + 1}</th>
+                    <td style={{padding : "5px 0px"}}><img src={product.photo} style={{ width : "50px"}} className="img-fluid"  alt={product.name}></img></td>
+                  <td><h6>{product.name}</h6></td>
+                  </tr>
+
+               )
+            })}
+        </tbody>
+     </table>
+            
+           
+          </div>
+          )}
         </div>
         <Footer></Footer>
       </Layout>
